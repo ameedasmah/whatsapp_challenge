@@ -78,7 +78,7 @@ border: none;
  display: none;
     }
 
-    .chat__footer > f.MuiSvgIcon-root {
+    .chat__footer > .MuiSvgIcon-root {
        padding: 10px;
        color:gray;
            }

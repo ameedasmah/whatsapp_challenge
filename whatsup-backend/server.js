@@ -20,6 +20,7 @@ const pusher = new Pusher({
 //for the middleware
 
 app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 app.use(cors())
 
 
@@ -77,9 +78,11 @@ app.get('/messages/sync', (req, res) => {
 })
 
 app.post('/messages/new', (req, res) => {
+    console.log(req.body)
     const dbMessage = req.body
     Messages.create(dbMessage, (err, data) => {
         if (err) {
+            console.log('asd')
             res.status(404).send(err)
         }
         else {
